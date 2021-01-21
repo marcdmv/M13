@@ -3,13 +3,17 @@ package springBootInitialDemo.dto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserResponseDto extends ResponseDto{
+public class UserResponseDto extends ResponseDto {
 
+    private String uuid;
     private String name;
     private String surname;
     private String dateOfBirth;
     private String gender;
 
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -27,6 +31,10 @@ public class UserResponseDto extends ResponseDto{
         this.gender = gender;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
     public String getName() {
         return name;
     }
@@ -42,4 +50,5 @@ public class UserResponseDto extends ResponseDto{
     public String getGender() {
         return gender;
     }
+
 }

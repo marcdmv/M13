@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import springBootInitialDemo.dto.ResponseDto;
 import springBootInitialDemo.dto.UserResponseDto;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -21,10 +22,12 @@ public class UserRepository implements IRepository, JpaRepository {
     @Autowired
     private UserResponseDto userResponseDto;
 
-    public UserResponseDto getUser (String uuid){
-        userResponseDto.setName("Jonatan");
-        userResponseDto.setSurname("Vicente");
-        userResponseDto.setGender("Male");
+    public UserResponseDto setUser (String uuid, String name, String surname, String dateOfBirth, String gender){
+        userResponseDto.setName(name);
+        userResponseDto.setSurname(surname);
+        userResponseDto.setDateOfBirth(dateOfBirth);
+        userResponseDto.setGender(gender);
+        userResponseDto.setUuid(uuid);
         return userResponseDto;
     }
 

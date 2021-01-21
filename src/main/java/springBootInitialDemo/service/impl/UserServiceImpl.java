@@ -14,11 +14,13 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository){
+
         this.userRepository = userRepository;
     }
 
-    public UserResponseDto getUser(String uuid){
-        return userRepository.getUser(uuid);
+    public UserResponseDto setUser(String uuid, String name, String surname, String dateOfBirth, String gender){
+
+        return userRepository.setUser(uuid,name,surname,dateOfBirth,gender);
     }
 
 }
