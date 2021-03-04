@@ -7,6 +7,8 @@ import springBootInitialDemo.dto.UserResponseDto;
 import springBootInitialDemo.repository.UserRepository;
 import springBootInitialDemo.service.IUserService;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements IUserService {
 
@@ -14,13 +16,16 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository){
-
         this.userRepository = userRepository;
     }
 
-    public UserResponseDto setUser(String uuid, String name, String surname, String dateOfBirth, String gender){
-
-        return userRepository.setUser(uuid,name,surname,dateOfBirth,gender);
+    public UserResponseDto setUser(String name){
+        return userRepository.setUser(name);
     }
 
+    public List<UserResponseDto> findAll(){
+        return userRepository.findAll();
+    }
+
+    public void deleteById(Integer id){}
 }

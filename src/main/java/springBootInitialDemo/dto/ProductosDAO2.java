@@ -13,9 +13,11 @@ public class ProductosDAO2 {
 
     }
     public ArrayList<String> findAll(){
+
         return lista;
     }
-    public void deleteById(Long productoId){
-        lista.remove(productoId.intValue());
+    public void deleteById(int productoId){
+
+        lista.remove(productoId);
     }
 }

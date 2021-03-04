@@ -2,9 +2,15 @@ package springBootInitialDemo.service;
 
 import springBootInitialDemo.dto.UserResponseDto;
 
+import java.util.List;
+
 public interface IUserService {
 
-    UserResponseDto setUser(String uuid, String name, String surname, String dateOfBirth, String gender);
+    UserResponseDto setUser(String name);
+
+    List<UserResponseDto> findAll();
+
+    void deleteById(Integer id);
 
     //List<UserResponseDto> getUsers();
 
